@@ -16,7 +16,3 @@ int Engine::run() {
     }
     return 0;
 }
-
-void Engine::quit() {
-    SDL_Quit();
-}

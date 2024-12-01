@@ -9,7 +9,6 @@ public:
     ~Engine();
 
     int run();
-    void quit();
 
     void pollEvents();
 
