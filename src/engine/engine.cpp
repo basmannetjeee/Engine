@@ -16,6 +16,16 @@ Engine::Engine() :
         }
 
 Engine::~Engine() {
+    if (_glContext) {
+        SDL_GL_DeleteContext(_glContext);
+        _glContext = nullptr;
+    }
+
+    if (_window) {
+        SDL_DestroyWindow(_window);
+        _window = nullptr;
+    }
+
     SDL_Quit();
 }
 
@@ -53,17 +63,17 @@ void Engine::clearBuffers() {
 }
 
 GLuint Engine::debugShaders() {
-    unsigned int vertShader;
+    GLuint vertShader;
     vertShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertShader, 1, &sh::vertexShaderSource, NULL);
     glCompileShader(vertShader);
 
-    unsigned int fragShader;
+    GLuint fragShader;
     fragShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragShader, 1, &sh::fragmentShaderSource, NULL);
     glCompileShader(fragShader);
 
-    unsigned int shaderProgram;
+    GLuint shaderProgram;
     shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertShader);
     glAttachShader(shaderProgram, fragShader);
