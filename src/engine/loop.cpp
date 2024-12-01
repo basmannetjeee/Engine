@@ -7,7 +7,7 @@ int Engine::run() {
 
     while (_running) {
         pollEvents();
-        clearBuffers();
+        clearScreen();
 
         rect.draw(shaderProgram);
         SDL_GL_SwapWindow(_window);

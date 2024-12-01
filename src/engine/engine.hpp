@@ -12,7 +12,7 @@ public:
 
     void pollEvents();
 
-    void clearBuffers();
+    void clearScreen();
 
     GLuint debugShaders();
 private:

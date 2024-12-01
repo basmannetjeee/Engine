@@ -13,7 +13,7 @@ namespace shapes {
         void draw(unsigned int shaderProgram);
 
     private:
-        unsigned int _VAO, _VBO, _EBO;
+        GLuint _VAO, _VBO, _EBO;
         void _initializeBuffers();
     };
 }
