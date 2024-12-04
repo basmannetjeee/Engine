@@ -13,10 +13,12 @@ find_package(OpenGL REQUIRED)
 
 add_executable(OPENSCREAML
     src/main.cpp
+    src/engine/utilities/renderer/renderer.cpp
     src/engine/utilities/shapes/2D/rectangle/rectangle.cpp
     src/engine/utilities/shaders/shaders.cpp
     src/engine/utilities/math/math.cpp
-    src/engine/utilities/fps/fps.cpp
+    src/engine/utilities/deltatime/deltatime.cpp
+    src/engine/utilities/framemanager/framemanager.cpp
     src/engine/engine.cpp
     src/engine/loop.cpp
 )

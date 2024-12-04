@@ -9,7 +9,6 @@ namespace shapes {
     public:
         Rectangle();
         ~Rectangle();
-
         void draw(unsigned int shaderProgram);
 
     private:

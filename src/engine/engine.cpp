@@ -1,19 +1,15 @@
-// Yes, we are using define macros. I don't fucking care what you say.
+// Yes, we are using define macros. Feel free to remove this, I don't really think it matters
 #define KEYSYM(event) (event.key.keysym.sym)
 #include "engine.hpp"
 #include "utilities/shaders/shaders.hpp"
 #include <iostream>
 
-Engine::Engine() :
-        _fps(0),
-        _frameTime(0.0),
-        _deltaTime(0.0),
-        _running(false) {
-            if (_init() != 0) {
-                std::cout << "Initiaalisastion failed." << std::endl;
-                SDL_Quit();
-            }
-        }
+Engine::Engine() : _running(false) {
+    if (_init() != 0) {
+        std::cout << "Initiaalisastion failed." << std::endl;
+        SDL_Quit();
+    }
+}
 
 Engine::~Engine() {
     if (_glContext) {

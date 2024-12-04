@@ -3,6 +3,10 @@
 #include <OpenGL/gl3.h>
 #include <SDL2/SDL.h>
 
+#include "utilities/renderer/renderer.hpp"
+#include "utilities/framemanager/framemanager.hpp"
+#include "utilities/deltatime/deltatime.hpp"
+
 class Engine {
 public:
     Engine();
@@ -15,12 +19,11 @@ public:
     void clearScreen();
 
     GLuint debugShaders();
-private:
-    void updateMetrics();
-    int _fps;
-    float _frameTime;
-    float _deltaTime;
 
+    Renderer renderer;
+    FrameManager frame;
+    DeltaTime delta;
+private:
     bool _running;
 
     SDL_Window* _window;
